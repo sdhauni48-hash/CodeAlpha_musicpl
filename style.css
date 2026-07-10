@@ -1,0 +1,277 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(135deg,#ffb6e6,#c9a7ff,#ffd6f6);
+
+    overflow:hidden;
+}
+
+
+/* background glow circles */
+
+body::before,
+body::after{
+
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    filter:blur(40px);
+    animation:move 8s infinite alternate;
+}
+
+
+body::before{
+
+    width:350px;
+    height:350px;
+    background:#ff69c9;
+    top:-100px;
+    left:-100px;
+
+}
+
+
+body::after{
+
+    width:400px;
+    height:400px;
+    background:#9b59ff;
+    bottom:-150px;
+    right:-120px;
+
+}
+
+
+@keyframes move{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(50px);
+    }
+
+}
+
+
+/* music card */
+
+.player{
+
+    width:430px;
+    padding:35px;
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.28);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:35px;
+
+    border:1px solid rgba(255,255,255,0.5);
+
+    box-shadow:
+    0 25px 60px rgba(120,50,150,0.35);
+
+}
+
+
+/* cover */
+
+.cover{
+
+    width:270px;
+    height:270px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:5px solid white;
+
+    box-shadow:
+    0 0 35px #ff6bd6;
+
+    margin-bottom:20px;
+
+}
+
+
+/* title */
+
+h2{
+
+    color:#70247d;
+
+    font-size:28px;
+
+}
+
+
+h4{
+
+    color:#9146c7;
+
+    margin-top:8px;
+
+}
+
+
+/* progress */
+
+.time{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin:25px 0;
+
+}
+
+
+#progress{
+
+    flex:1;
+
+}
+
+
+input[type="range"]{
+
+    accent-color:#d633ff;
+
+}
+
+
+/* buttons */
+
+.controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+}
+
+
+.controls button{
+
+    width:70px;
+
+    height:70px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(135deg,#ff4fc3,#9b5cff);
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 25px #b84cff80;
+
+    transition:.3s;
+
+}
+
+
+.controls button:hover{
+
+    transform:scale(1.15);
+
+}
+
+
+/* volume */
+
+.volume{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:25px 0;
+
+    color:#812b9b;
+
+}
+
+
+/* playlist */
+
+h3{
+
+    color:#70247d;
+
+}
+
+
+ul{
+
+    list-style:none;
+
+    max-height:150px;
+
+    overflow:auto;
+
+    margin-top:15px;
+
+}
+
+
+li{
+
+    background:rgba(255,255,255,0.35);
+
+    margin:10px 0;
+
+    padding:12px;
+
+    border-radius:18px;
+
+    color:#682080;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+li:hover{
+
+    background:white;
+
+    transform:translateX(10px);
+
+}
